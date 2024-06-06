@@ -18,6 +18,14 @@ const other = {
       icon: icons.IconBrandChrome,
       breadcrumbs: false
     },
+    {
+      id: 'home',
+      title: 'Home Page',
+      type: 'item',
+      url: '/home',
+      icon: icons.IconBrandChrome,
+      breadcrumbs: false
+    }
     
   ]
 };

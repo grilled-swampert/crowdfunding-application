@@ -3,12 +3,17 @@ import { lazy } from 'react';
 // project imports
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
+import { element } from 'prop-types';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard')));
 
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
+
+const Home = Loadable(lazy(() => import ('views/home')));
+const CreateCampaign = Loadable(lazy(() => import('views/create-campaigns')));
+
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -32,6 +37,14 @@ const MainRoutes = {
     {
       path: '/sample-page',
       element: <SamplePage />
+    },
+    {
+      path:'/home',
+      element: <Home/>
+    },
+    {
+      path:'/create-campaign',
+      element: <CreateCampaign/>
     }
   ]
 };
