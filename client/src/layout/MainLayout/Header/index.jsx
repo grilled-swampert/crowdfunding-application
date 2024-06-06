@@ -11,6 +11,7 @@ import LogoSection from '../LogoSection';
 import SearchSection from './SearchSection';
 import NotificationSection from './NotificationSection';
 import ProfileSection from './ProfileSection';
+import { ConnectWallet } from '@thirdweb-dev/react';
 
 // assets
 import { IconMenu2 } from '@tabler/icons-react';
@@ -62,9 +63,9 @@ const Header = ({ handleLeftDrawerToggle }) => {
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ flexGrow: 1 }} />
 
-      {/* notification & profile */}
-      <NotificationSection />
-      <ProfileSection />
+      <ConnectWallet/>
+  
+
     </>
   );
 };
