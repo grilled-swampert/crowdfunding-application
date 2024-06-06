@@ -25,7 +25,16 @@ const other = {
       url: '/home',
       icon: icons.IconBrandChrome,
       breadcrumbs: false
+    },
+    {
+      id: 'create-campaign',
+      title: 'Create Campaign Page',
+      type: 'item',
+      url: '/create-campaign',
+      icon: icons.IconBrandChrome,
+      breadcrumbs: false
     }
+
     
   ]
 };
