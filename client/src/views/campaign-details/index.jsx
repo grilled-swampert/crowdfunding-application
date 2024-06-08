@@ -36,16 +36,26 @@ const CampaignDetails = () => {
 
   const handleDonate = async () => {
     try {
-      console.log(contract, state.pId, amount);
-      const data = await contract.call('donateToCampaign', [state.pId], {
-        value: ethers.utils.parseEther(amount)
-      });
-      console.log('data: ', data);
+      const amountInWei = ethers.utils.parseEther(amount);
+      
+      // Donate to the campaign
+      const data = await contract.call('donateToCampaign', [state.pId], { value: amountInWei });
+      
+      // Update the total amount raised
+      const newAmountCollected = ethers.utils.parseEther(state.amountCollected).add(amountInWei);
+      setState({ ...state, amountCollected: ethers.utils.formatEther(newAmountCollected) });
+  
+      // Update the list of donators
+      setDonators([...donators, { donator: 'YourName', donation: ethers.utils.formatEther(amountInWei) }]);
+      
+      // Clear the donation amount input field
       setAmount('');
     } catch (err) {
       console.error('Error donating:', err);
     }
   };
+  
+  
 
   if (isLoading) {
     return <CircularProgress />;
@@ -82,7 +92,7 @@ const CampaignDetails = () => {
               <strong>Goal:</strong> {state.target} MATIC
             </Typography>
             <Typography variant="body1" gutterBottom>
-              <strong>Deadline:</strong> {moment(state.deadline).format('MMMM Do YYYY, h:mm:ss a')}
+              <strong>Deadline:</strong> {moment(state.deadline).format('DD MM YYYY, h:mm:ss a')}
             </Typography>
             <Typography variant="body1" gutterBottom>
               <strong>Raised:</strong> {state.amountCollected} MATIC

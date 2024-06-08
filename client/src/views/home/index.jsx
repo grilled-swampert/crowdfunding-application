@@ -69,7 +69,7 @@ const Home = () => {
                 description={campaign.description}
                 image={campaign.image}
                 target={campaign.target}
-                amountCollected={campaign.amountcollected}
+                amountCollected={campaign.amountCollected}
                 handleClick={() => handleNavigate(campaign)}
               />
             </Grid>

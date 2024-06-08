@@ -22,7 +22,8 @@ const App = () => {
   const customization = useSelector((state) => state.customization);
 
   return (
-    <ThirdwebProvider activeChain={PolygonAmoyTestnet} clientId="700344b43a6642667fc8f4aafb37096f">
+    // <ThirdwebProvider activeChain={PolygonAmoyTestnet} clientId= "700344b43a6642667fc8f4aafb37096f">
+    <ThirdwebProvider activeChain={PolygonAmoyTestnet} clientId= "0ba927c0ec926238e0c9efcde038116f">
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={themes(customization)}>
           <CssBaseline />

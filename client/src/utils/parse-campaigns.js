@@ -8,7 +8,7 @@ const parseCampaigns = (campaigns) => {
     description: campaign.description,
     target: ethers.utils.formatEther(campaign.target.toString()),
     deadline: campaign.deadline.toNumber(),
-    amountCollected: ethers.utils.formatEther(campaign.amountcollected.toString()),
+    amountCollected: ethers.utils.formatEther(campaign.amountCollected.toString()),
     image: campaign.image,
     pId: i
   }));

@@ -8,9 +8,6 @@ import { element } from 'prop-types';
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard')));
 
-// sample page routing
-const SamplePage = Loadable(lazy(() => import('views/sample-page')));
-
 const Home = Loadable(lazy(() => import ('views/home')));
 const CreateCampaign = Loadable(lazy(() => import('views/create-campaigns')));
 const CampaignDetails=Loadable(lazy(() => import('views/campaign-details')))
@@ -33,10 +30,6 @@ const MainRoutes = {
           element: <DashboardDefault />
         }
       ]
-    },
-    {
-      path: '/sample-page',
-      element: <SamplePage />
     },
     {
       path:'/home',

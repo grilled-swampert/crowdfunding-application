@@ -38,7 +38,7 @@ const FundCard = ({ title, description, image, target, amountCollected, handleCl
             Name: {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Desp: {description}
+            Description: {description}
           </Typography>
           <Typography variant="body2" color="textPrimary">
             Target: {target} MATIC
